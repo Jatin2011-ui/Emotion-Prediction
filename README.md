@@ -86,7 +86,7 @@ Dense (6 units, softmax)  → Emotion probabilities
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Jatin2011-ui/Emotion-Prediction
 cd emotional-prediction
 ```
 
