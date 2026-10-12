@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How does this sentence feel?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="glow g1"></div>
+  <div class="glow g2"></div>
+
+  <main class="card" id="card">
+    <h1>How does this sentence feel?</h1>
+    <p class="sub">Type anything. A BiGRU model reads it and names the emotion.</p>
+
+    <textarea id="text" maxlength="2000" rows="4" placeholder="I can't believe I finally got the offer..."></textarea>
+    <div class="meta">
+      <span id="count">0 / 2000</span>
+      <span class="status" id="status"><i></i><b>Connecting to model</b></span>
+    </div>
+
+    <div class="chips" id="chips">
+      <button type="button" data-t="I feel so happy and excited today">Happy</button>
+      <button type="button" data-t="I miss her so much it hurts">Sad</button>
+      <button type="button" data-t="How dare you lie to me again">Angry</button>
+      <button type="button" data-t="I am terrified of what is behind that door">Scared</button>
+      <button type="button" data-t="Wow, I never expected this at all">Surprised</button>
+    </div>
+
+    <button class="go" id="go" type="button"><span class="label">Read the emotion</span><span class="spin"></span></button>
+    <p class="error" id="error" role="alert"></p>
+
+    <section class="result" id="result" hidden>
+      <div class="emoji" id="emoji"></div>
+      <h2 id="emotion"></h2>
+      <p class="conf"><span id="conf">0</span>% confident</p>
+      <div class="bars" id="bars"></div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/canvas-confetti/1.9.3/confetti.browser.min.js"></script>
+  <script src="/static/script.js"></script>
+</body>
+</html>
